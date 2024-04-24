@@ -1,13 +1,26 @@
 import React from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import HomePage from "./assets/pages/HomePage.jsx";
+import Sidebar from "./assets/components/Sidebar.jsx";
+import AllFood from "./assets/components/AllFood.jsx";
+import CreateItem from "./assets/components/CreateItem.jsx";
+import UpdateItem from "./assets/components/UpdateItem.jsx";
 
 const App = () => {
     return (
         <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<HomePage/>}/>
-            </Routes>
+            <div className="d-flex ">
+                <div className="col-auto sidebar ">
+                    <Sidebar/>
+                </div>
+                <div>
+                    <Routes>
+                        <Route path='/' element={<AllFood/>}/>
+                        <Route path='/additem' element={<CreateItem/>}/>
+                        <Route path='/updateiteam/:id' element={<UpdateItem/>}/>
+                    </Routes>
+                </div>
+
+            </div>
         </BrowserRouter>
     );
 };

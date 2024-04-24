@@ -3,6 +3,35 @@
     margin: 0;
 }
 
+.sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 300px;
+    background-color: #f0f0f0;
+
+}
+
 .worp-bg{
     background: #F1F2F7;
 }
+
+.text-color{
+    color: #A6ABC8;
+}
+
+.bg-purple{
+    background: #E4E7E4;
+    border-radius: 5px;
+}
+
+.price-badge{
+    background: #A855F7;
+    padding: 10px 14px;
+    border-radius: 5px;
+}
+
+img{
+    min-height: 200px!important;
+}
+

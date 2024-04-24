@@ -47,6 +47,21 @@ exports.Update = async (req, res)=>{
     }
 }
 
+exports.UpdateById =async (req, res) =>{
+     try{
+         let {id}=req.params
+       let rows =  await FoodModel.find({_id: id});
+       return res.status(200).json({status: "Success", message:"Request Completed", row:rows})
+   }
+    catch (e) {
+       return res.status(200).json({error:e.toString()})
+
+    }
+
+
+
+}
+
 
 
 
