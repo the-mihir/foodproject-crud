@@ -18,7 +18,7 @@ app.use(helmet())
 app.use(hpp())
 
 app.use(express.json({limit:'10mb'}))
-app.use(express.urlencoded({limit: "10mb"}))
+app.use(express.urlencoded({limit: "10mb", extended: false }))
 
 const limiter = rateLimit({windowMs:15*60*1000, max:1000})
 app.use(limiter)
@@ -27,10 +27,10 @@ app.use(limiter)
 
 
 // Database Connection
-let URI = "mongodb+srv://<username>:<password>@cluster0.gpzrl3k.mongodb.net/FoodProject";
-let OPTION = {user:'mihirkantho',pass:'UBRKpzcZyKxWWXnK', autoIndex:true};
+let URI = "mongodb+srv://mihirkantho:UBRKpzcZyKxWWXnK@cluster0.gpzrl3k.mongodb.net/FoodProject";
 
-mongoose.connect(URI,OPTION).then((res)=>{
+
+mongoose.connect(URI).then((res)=>{
     console.log('Data Base Connected')
 }).catch((err)=>{
     console.log(err)
